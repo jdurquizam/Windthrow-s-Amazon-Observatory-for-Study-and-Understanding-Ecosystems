@@ -445,6 +445,7 @@
             const navButtons = document.querySelectorAll('.nav-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileMenuBtn = document.getElementById('mobile-menu-button');
+            const navbar = document.getElementById('navbar');
 
             // Function to switch active view
             function switchView(targetId) {
@@ -457,7 +458,21 @@
                 const targetView = document.getElementById(targetId);
                 if (targetView) {
                     targetView.classList.add('active');
-                    window.scrollTo(0, 0); // Reset scroll to top
+                    
+                    // Logic to go directly to the info
+                    if (targetId === 'home') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                        // Wait a tiny moment for the display:block to render, then scroll to the text
+                        setTimeout(() => {
+                            const contentBox = targetView.querySelector('.max-w-7xl, .max-w-4xl, .text-center');
+                            if (contentBox) {
+                                const navHeight = navbar.offsetHeight;
+                                const topPosition = contentBox.getBoundingClientRect().top + window.scrollY - navHeight - 20;
+                                window.scrollTo({ top: topPosition, behavior: 'smooth' });
+                            }
+                        }, 10);
+                    }
                 }
 
                 // Update URL hash without jumping
@@ -496,12 +511,12 @@
                 });
             }
 
-            // Initial load check (if user arrives at #team, show team)
+            // Initial load check
             const hash = window.location.hash.substring(1);
             if (hash && document.getElementById(hash)) {
                 switchView(hash);
             } else {
-                switchView('home'); // Default view
+                switchView('home'); 
             }
 
             // --- Zenodo API Fetch Logic ---
@@ -514,7 +529,6 @@
                     return response.json();
                 })
                 .then(data => {
-                    // Extract stats and format with commas (e.g., 1,200)
                     const views = data.stats.views.toLocaleString();
                     const downloads = data.stats.downloads.toLocaleString();
                     
@@ -523,16 +537,8 @@
                 })
                 .catch(error => {
                     console.error('Error fetching Zenodo stats:', error);
-                    if(viewsEl) {
-                        viewsEl.innerText = 'Unavailable';
-                        viewsEl.classList.remove('text-amazon-700');
-                        viewsEl.classList.add('text-gray-500');
-                    }
-                    if(downloadsEl) {
-                        downloadsEl.innerText = 'Unavailable';
-                        downloadsEl.classList.remove('text-amazon-700');
-                        downloadsEl.classList.add('text-gray-500');
-                    }
+                    if(viewsEl) viewsEl.innerText = 'Unavailable';
+                    if(downloadsEl) downloadsEl.innerText = 'Unavailable';
                 });
         });
     </script>
