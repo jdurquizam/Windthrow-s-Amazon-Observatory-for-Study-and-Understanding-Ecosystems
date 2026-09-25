@@ -67,6 +67,38 @@
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
         }
+        
+        /* Partners Carousel CSS */
+        .partners-carousel {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            width: 100%;
+            padding: 20px 0;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        .partners-track {
+            display: inline-flex;
+            animation: marquee 25s linear infinite;
+            align-items: center;
+        }
+        .partners-track img {
+            height: 50px;
+            margin: 0 40px;
+            object-fit: contain;
+            /* Makes logos white for the dark hero background */
+            filter: brightness(0) invert(1) opacity(0.7);
+            transition: all 0.3s ease;
+        }
+        .partners-track img:hover {
+            filter: brightness(0) invert(1) opacity(1);
+            transform: scale(1.05);
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
     </style>
 </head>
 <body class="font-sans text-gray-800 antialiased bg-gray-50 flex flex-col min-h-screen">
@@ -89,9 +121,10 @@
                 </div>
                 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
+                <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
                     <button class="nav-btn text-sm font-medium text-gray-600 hover:text-amazon-700 transition-colors" data-target="home">Home</button>
                     <button class="nav-btn text-sm font-medium text-gray-600 hover:text-amazon-700 transition-colors" data-target="apps">Apps & Dashboards</button>
+                    <button class="nav-btn text-sm font-medium text-gray-600 hover:text-amazon-700 transition-colors" data-target="fluxtowers">Flux Towers</button>
                     <button class="nav-btn text-sm font-medium text-gray-600 hover:text-amazon-700 transition-colors" data-target="data">Data</button>
                     <button class="nav-btn text-sm font-medium text-gray-600 hover:text-amazon-700 transition-colors" data-target="publications">Publications</button>
                     <button class="nav-btn text-sm font-medium text-gray-600 hover:text-amazon-700 transition-colors" data-target="team">Team</button>
@@ -113,6 +146,7 @@
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <button class="nav-btn block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-amazon-700 hover:bg-gray-50" data-target="home">Home</button>
                 <button class="nav-btn block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-amazon-700 hover:bg-gray-50" data-target="apps">Apps & Dashboards</button>
+                <button class="nav-btn block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-amazon-700 hover:bg-gray-50" data-target="fluxtowers">Flux Towers</button>
                 <button class="nav-btn block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-amazon-700 hover:bg-gray-50" data-target="data">Data</button>
                 <button class="nav-btn block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-amazon-700 hover:bg-gray-50" data-target="publications">Publications</button>
                 <button class="nav-btn block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-amazon-700 hover:bg-gray-50" data-target="team">Team</button>
@@ -124,9 +158,10 @@
     <main class="flex-grow pt-20">
         
         <!-- View: HOME -->
-        <section id="home" class="view-section active hero-pattern relative text-white py-20 lg:py-32 min-h-[calc(100vh-5rem)] flex flex-col justify-center">
+        <section id="home" class="view-section active hero-pattern relative text-white pt-20 pb-10 lg:pt-32 lg:pb-16 min-h-[calc(100vh-5rem)] flex flex-col justify-center">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-                <div class="max-w-3xl">
+                
+                <div class="max-w-3xl mb-16">
                     <span class="inline-block py-1 px-3 rounded-full bg-amazon-500/20 border border-amazon-500/30 text-amazon-100 text-sm font-semibold tracking-wide mb-6 backdrop-blur-sm">
                         Research Initiative
                     </span>
@@ -138,7 +173,7 @@
                     </p>
                     
                     <!-- Featured Research Callout Box -->
-                    <div class="bg-amazon-50 border-l-4 border-amazon-700 p-6 mb-10 rounded-r-lg shadow-lg text-gray-800">
+                    <div class="bg-amazon-50 border-l-4 border-amazon-700 p-6 mb-10 rounded-r-lg shadow-lg text-gray-800 max-w-2xl">
                         <div class="flex items-start gap-4">
                             <span class="text-2xl mt-1">📢</span>
                             <div>
@@ -156,11 +191,32 @@
                         <button class="nav-btn inline-flex justify-center items-center px-8 py-3.5 border border-transparent text-base font-medium rounded-lg text-amazon-950 bg-white hover:bg-gray-100 shadow-lg transition-colors" data-target="apps">
                             Explore Apps
                         </button>
-                        <button class="nav-btn inline-flex justify-center items-center px-8 py-3.5 border border-white/30 text-base font-medium rounded-lg text-white backdrop-blur-sm hover:bg-white/10 transition-colors" data-target="data">
-                            Access Data
+                        <button class="nav-btn inline-flex justify-center items-center px-8 py-3.5 border border-white/30 text-base font-medium rounded-lg text-white backdrop-blur-sm hover:bg-white/10 transition-colors" data-target="fluxtowers">
+                            Flux Towers
                         </button>
                     </div>
                 </div>
+
+                <!-- Partner Carousel -->
+                <div class="mt-16 pt-10 border-t border-white/20">
+                    <p class="text-center text-xs font-semibold tracking-widest text-amazon-100 uppercase mb-6 opacity-80">Our Partners & Institutional Affiliations</p>
+                    <div class="partners-carousel">
+                        <div class="partners-track">
+                            <!-- Logos duplicated once to create a seamless infinite scroll effect -->
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/UNAP_logo.png/600px-UNAP_logo.png" alt="UNAP" onerror="this.src='https://placehold.co/200x80/052e16/ffffff?text=UNAP'">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Max_Planck_Society_Logo.svg/1200px-Max_Planck_Society_Logo.svg.png" alt="Max Planck Institute" onerror="this.src='https://placehold.co/200x80/052e16/ffffff?text=Max+Planck+Institute'">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Logotipo_do_INPA.png" alt="INPA" onerror="this.src='https://placehold.co/200x80/052e16/ffffff?text=INPA'">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Berkeley_Lab_Logo.svg/2560px-Berkeley_Lab_Logo.svg.png" alt="Berkeley Lab" onerror="this.src='https://placehold.co/200x80/052e16/ffffff?text=Berkeley+Lab'">
+                            
+                            <!-- Duplicates -->
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/UNAP_logo.png/600px-UNAP_logo.png" alt="UNAP" onerror="this.src='https://placehold.co/200x80/052e16/ffffff?text=UNAP'">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Max_Planck_Society_Logo.svg/1200px-Max_Planck_Society_Logo.svg.png" alt="Max Planck Institute" onerror="this.src='https://placehold.co/200x80/052e16/ffffff?text=Max+Planck+Institute'">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Logotipo_do_INPA.png" alt="INPA" onerror="this.src='https://placehold.co/200x80/052e16/ffffff?text=INPA'">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Berkeley_Lab_Logo.svg/2560px-Berkeley_Lab_Logo.svg.png" alt="Berkeley Lab" onerror="this.src='https://placehold.co/200x80/052e16/ffffff?text=Berkeley+Lab'">
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -169,14 +225,13 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-10">
                     <h2 class="text-sm font-bold text-amazon-700 tracking-widest uppercase mb-3">Interactive Spatial Data</h2>
-                    <h3 class="text-3xl font-serif font-bold text-gray-900 mb-4"><em>Wayra Tools</em>: Windthrow Monitoring Tools</h3>
+                    <h3 class="text-3xl font-serif font-bold text-gray-900 mb-4"><em>Wayra Tools</em>: Windthrow Monitoring</h3>
                     <p class="text-gray-600">
                         Inspired by <strong>Wayra</strong>—the Quechua word for wind—these tools allow you to explore continuous monitoring dashboards visualizing storm-driven disturbance events across the Amazon.
                     </p>
                 </div>
                 
                 <!-- GEE App Embed -->
-                <!-- The src is left empty and will be injected by JS when the tab is opened -->
                 <div class="w-full bg-gray-100 rounded-xl mb-12 border border-gray-300 shadow-inner relative flex items-center justify-center" style="height: 750px;" id="gee-container">
                     <p id="gee-loading-text" class="text-gray-500 font-medium absolute z-0">Loading Earth Engine App...</p>
                     <iframe 
@@ -207,8 +262,69 @@
             </div>
         </section>
 
+        <!-- View: FLUX TOWERS -->
+        <section id="fluxtowers" class="view-section py-20 bg-gray-50 min-h-[calc(100vh-5rem)]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-sm font-bold text-amazon-700 tracking-widest uppercase mb-3">Micrometeorology & Carbon Exchange</h2>
+                    <h3 class="text-3xl font-serif font-bold text-gray-900 mb-4">Flux Tower Networks</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Monitoring tropical ecosystem carbon exchange, Solar-Induced Fluorescence (SIF), Gross Primary Production (GPP), and Net Ecosystem Exchange (NEE) across the Amazon Basin and transition zones.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                    <!-- PanAmazoniaFlux -->
+                    <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-amazon-100 text-amazon-700 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h4 class="text-2xl font-bold text-gray-900 mb-3">PanAmazoniaFlux</h4>
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            Coordinating regional research initiatives and flux tower sites across the wider Amazon basin to capture long-term meteorological trends, carbon cycling, and the impact of severe weather events on forest recovery.
+                        </p>
+                        <div class="bg-gray-50 rounded-lg p-4 border border-gray-100">
+                            <ul class="space-y-3 text-sm text-gray-700">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-amazon-600 font-bold">📍 Coverage:</span> 
+                                    <span>Amazon Basin ecosystem</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-amazon-600 font-bold">📊 Instruments:</span> 
+                                    <span>Ground-based SIF sensors, Eddy Covariance towers</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- AndesFlux -->
+                    <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                        </div>
+                        <h4 class="text-2xl font-bold text-gray-900 mb-3">AndesFlux</h4>
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            Focusing on ecosystem functioning along critical Andean-Amazonian elevation gradients, studying the complex atmospheric exchanges, moisture transport, and carbon dynamics in these vital transition zones.
+                        </p>
+                        <div class="bg-gray-50 rounded-lg p-4 border border-gray-100">
+                            <ul class="space-y-3 text-sm text-gray-700">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-600 font-bold">📍 Coverage:</span> 
+                                    <span>Andean-Amazonian gradient</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-600 font-bold">🔬 Focus:</span> 
+                                    <span>Topographic and altitudinal influence on ecosystem exchange</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- View: DATA -->
-        <section id="data" class="view-section py-20 bg-gray-50 min-h-[calc(100vh-5rem)]">
+        <section id="data" class="view-section py-20 bg-white min-h-[calc(100vh-5rem)]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <h2 class="text-sm font-bold text-amazon-700 tracking-widest uppercase mb-3">Open Science</h2>
@@ -220,7 +336,7 @@
 
                 <div class="max-w-3xl mx-auto">
                     <!-- Zenodo Custom Card -->
-                    <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
                         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
                             <div class="flex items-center gap-4 mb-4 md:mb-0">
                                 <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -228,7 +344,7 @@
                                 </div>
                                 <div>
                                     <h4 class="text-xl font-bold text-gray-900">Windthrow Disturbance Dataset</h4>
-                                    <span class="text-xs font-semibold px-2 py-1 bg-gray-100 text-gray-600 rounded mt-1 inline-block">DOI: 10.5281/zenodo.11168104</span>
+                                    <span class="text-xs font-semibold px-2 py-1 bg-white text-gray-600 rounded mt-1 inline-block border border-gray-200">DOI: 10.5281/zenodo.11168104</span>
                                 </div>
                             </div>
                             <a href="https://zenodo.org/records/11168104" target="_blank" class="px-5 py-2.5 bg-amazon-700 text-white text-sm font-medium rounded-lg hover:bg-amazon-900 transition-colors inline-flex items-center shadow-sm">
@@ -241,7 +357,7 @@
                         </p>
                         
                         <!-- Live Zenodo Stats -->
-                        <div class="bg-gray-50 border border-gray-100 rounded-xl p-4 flex gap-8">
+                        <div class="bg-white border border-gray-200 rounded-xl p-4 flex gap-8">
                             <div>
                                 <span class="block text-xs font-bold text-gray-500 uppercase mb-1">Live Views</span>
                                 <span id="zenodo-views" class="text-xl font-bold text-amazon-700 flex items-center">
@@ -262,7 +378,7 @@
         </section>
 
         <!-- View: PUBLICATIONS -->
-        <section id="publications" class="view-section py-20 bg-white min-h-[calc(100vh-5rem)]">
+        <section id="publications" class="view-section py-20 bg-gray-50 min-h-[calc(100vh-5rem)]">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12">
                     <h2 class="text-sm font-bold text-amazon-700 tracking-widest uppercase mb-3">Literature</h2>
@@ -273,7 +389,7 @@
                 <ul class="space-y-6">
                     
                     <!-- Paper 1 -->
-                    <li class="p-6 rounded-xl border border-gray-200 bg-gray-50 hover:bg-white hover:border-amazon-300 hover:shadow-md transition-all">
+                    <li class="p-6 rounded-xl border border-gray-200 bg-white hover:border-amazon-300 hover:shadow-md transition-all">
                         <h4 class="text-lg font-bold text-gray-900 mb-1">
                             <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023AV001030" target="_blank" class="hover:text-amazon-700 transition-colors">Increased occurrence of large-scale windthrows across the Amazon Basin</a>
                         </h4>
@@ -284,13 +400,13 @@
                         
                         <div class="flex flex-wrap gap-2 items-center">
                             <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023AV001030" target="_blank" class="text-xs font-semibold px-3 py-1 bg-amazon-700 text-white rounded hover:bg-amazon-900 transition">Read Paper</a>
-                            <span class="text-[0.7rem] px-2 py-1 bg-gray-200 text-gray-800 rounded font-bold tracking-wide">DOI: 10.1029/2023AV001030</span>
-                            <span class="text-[0.7rem] px-2 py-1 bg-blue-100 text-blue-800 rounded font-bold border border-blue-200">📈 High Impact</span>
+                            <span class="text-[0.7rem] px-2 py-1 bg-gray-100 text-gray-800 rounded font-bold tracking-wide">DOI: 10.1029/2023AV001030</span>
+                            <span class="text-[0.7rem] px-2 py-1 bg-blue-50 text-blue-800 rounded font-bold border border-blue-200">📈 High Impact</span>
                         </div>
                     </li>
 
                     <!-- Paper 2 -->
-                    <li class="p-6 rounded-xl border border-gray-200 bg-gray-50 hover:bg-white hover:border-amazon-300 hover:shadow-md transition-all">
+                    <li class="p-6 rounded-xl border border-gray-200 bg-white hover:border-amazon-300 hover:shadow-md transition-all">
                         <h4 class="text-lg font-bold text-gray-900 mb-1">
                             <a href="https://iopscience.iop.org/article/10.1088/2752-664X/ae6784/meta" target="_blank" class="hover:text-amazon-700 transition-colors">Tracking Amazon forest succession after large-scale windthrow events</a>
                         </h4>
@@ -301,13 +417,13 @@
                         
                         <div class="flex flex-wrap gap-2 items-center">
                             <a href="https://iopscience.iop.org/article/10.1088/2752-664X/ae6784/meta" target="_blank" class="text-xs font-semibold px-3 py-1 bg-amazon-700 text-white rounded hover:bg-amazon-900 transition">Read Paper</a>
-                            <span class="text-[0.7rem] px-2 py-1 bg-gray-200 text-gray-800 rounded font-bold tracking-wide">DOI: 10.1088/2752-664X/ae6784</span>
-                            <span class="text-[0.7rem] px-2 py-1 bg-orange-100 text-orange-800 rounded font-bold border border-orange-200">🔓 Open Access</span>
+                            <span class="text-[0.7rem] px-2 py-1 bg-gray-100 text-gray-800 rounded font-bold tracking-wide">DOI: 10.1088/2752-664X/ae6784</span>
+                            <span class="text-[0.7rem] px-2 py-1 bg-orange-50 text-orange-800 rounded font-bold border border-orange-200">🔓 Open Access</span>
                         </div>
                     </li>
 
                     <!-- Paper 3 -->
-                    <li class="p-6 rounded-xl border border-gray-200 bg-gray-50 hover:bg-white hover:border-amazon-300 hover:shadow-md transition-all">
+                    <li class="p-6 rounded-xl border border-gray-200 bg-white hover:border-amazon-300 hover:shadow-md transition-all">
                         <h4 class="text-lg font-bold text-gray-900 mb-1">
                             <a href="https://www.mdpi.com/1999-4907/12/6/667" target="_blank" class="hover:text-amazon-700 transition-colors">The dynamics of forest recovery after windthrows</a>
                         </h4>
@@ -318,14 +434,14 @@
                         
                         <div class="flex flex-wrap gap-2 items-center">
                             <a href="https://www.mdpi.com/1999-4907/12/6/667" target="_blank" class="text-xs font-semibold px-3 py-1 bg-amazon-700 text-white rounded hover:bg-amazon-900 transition">Read Paper</a>
-                            <span class="text-[0.7rem] px-2 py-1 bg-gray-200 text-gray-800 rounded font-bold tracking-wide">DOI: 10.3390/f12060667</span>
-                            <span class="text-[0.7rem] px-2 py-1 bg-green-100 text-green-800 rounded font-bold border border-green-200">👁️ ~7,000 Views</span>
-                            <span class="text-[0.7rem] px-2 py-1 bg-purple-100 text-purple-800 rounded font-bold border border-purple-200">❞ 18 Citations</span>
+                            <span class="text-[0.7rem] px-2 py-1 bg-gray-100 text-gray-800 rounded font-bold tracking-wide">DOI: 10.3390/f12060667</span>
+                            <span class="text-[0.7rem] px-2 py-1 bg-green-50 text-green-800 rounded font-bold border border-green-200">👁️ ~7,000 Views</span>
+                            <span class="text-[0.7rem] px-2 py-1 bg-purple-50 text-purple-800 rounded font-bold border border-purple-200">❞ 18 Citations</span>
                         </div>
                     </li>
 
                     <!-- Paper 4 -->
-                    <li class="p-6 rounded-xl border border-gray-200 bg-gray-50 hover:bg-white hover:border-amazon-300 hover:shadow-md transition-all">
+                    <li class="p-6 rounded-xl border border-gray-200 bg-white hover:border-amazon-300 hover:shadow-md transition-all">
                         <h4 class="text-lg font-bold text-gray-900 mb-1">
                             <a href="https://iopscience.iop.org/article/10.1088/1748-9326/aabe9f/meta" target="_blank" class="hover:text-amazon-700 transition-colors">Vulnerability of Amazon forests to storm-driven tree mortality</a>
                         </h4>
@@ -336,13 +452,13 @@
                         
                         <div class="flex flex-wrap gap-2 items-center">
                             <a href="https://iopscience.iop.org/article/10.1088/1748-9326/aabe9f/meta" target="_blank" class="text-xs font-semibold px-3 py-1 bg-amazon-700 text-white rounded hover:bg-amazon-900 transition">Read Paper</a>
-                            <span class="text-[0.7rem] px-2 py-1 bg-gray-200 text-gray-800 rounded font-bold tracking-wide">DOI: 10.1088/1748-9326/aabe9f</span>
-                            <span class="text-[0.7rem] px-2 py-1 bg-teal-100 text-teal-800 rounded font-bold border border-teal-200">Highly Cited</span>
+                            <span class="text-[0.7rem] px-2 py-1 bg-gray-100 text-gray-800 rounded font-bold tracking-wide">DOI: 10.1088/1748-9326/aabe9f</span>
+                            <span class="text-[0.7rem] px-2 py-1 bg-teal-50 text-teal-800 rounded font-bold border border-teal-200">Highly Cited</span>
                         </div>
                     </li>
 
                     <!-- LT.org Publication (Featured Multimedia) -->
-                    <li class="p-6 rounded-xl border border-gray-200 bg-gray-50 hover:bg-white hover:border-amazon-300 hover:shadow-md transition-all">
+                    <li class="p-6 rounded-xl border border-gray-200 bg-white hover:border-amazon-300 hover:shadow-md transition-all">
                         <h4 class="text-lg font-bold text-gray-900 mb-1">
                             <a href="https://lt.org/publication-plus/are-extreme-storms-reshaping-amazon-faster-we-realize/" target="_blank" class="hover:text-amazon-700 transition-colors">Are extreme storms reshaping the Amazon faster than we realize?</a>
                         </h4>
@@ -359,7 +475,7 @@
         </section>
 
         <!-- View: TEAM -->
-        <section id="team" class="view-section py-20 bg-gray-50 min-h-[calc(100vh-5rem)]">
+        <section id="team" class="view-section py-20 bg-white min-h-[calc(100vh-5rem)]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="text-center max-w-3xl mx-auto mb-16">
@@ -371,7 +487,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-24 max-w-6xl mx-auto">
                     
                     <!-- PI Profile: Jose David -->
-                    <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-6 items-start">
+                    <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-6 items-start">
                         <img src="https://ui-avatars.com/api/?name=Jose+David+Urquiza&background=15803d&color=fff&size=200" alt="Jose David Urquiza Muñoz" class="w-32 h-32 md:w-32 md:h-32 rounded-xl object-cover shadow-sm flex-shrink-0">
                         <div>
                             <h4 class="text-xl font-bold text-gray-900">Jose David Urquiza Muñoz</h4>
@@ -380,14 +496,14 @@
                                 Faculty member and researcher at Universidad Nacional de la Amazonía Peruana, leading the forest attributes laboratory. Research affiliate with the Max Planck Institute for Biogeochemistry.
                             </p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="text-[0.65rem] font-semibold px-2 py-1 bg-gray-100 text-gray-700 rounded border border-gray-200">UNAP</span>
+                                <span class="text-[0.65rem] font-semibold px-2 py-1 bg-white text-gray-700 rounded border border-gray-200">UNAP</span>
                                 <span class="text-[0.65rem] font-semibold px-2 py-1 bg-blue-50 text-blue-700 rounded border border-blue-100">Max Planck Institute</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Profile: Susan Trumbore -->
-                    <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-6 items-start">
+                    <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-6 items-start">
                         <img src="https://www.bgc-jena.mpg.de/person/strumbore/picture" alt="Susan Trumbore" class="w-32 h-32 md:w-32 md:h-32 rounded-xl object-cover shadow-sm flex-shrink-0" onerror="this.src='https://ui-avatars.com/api/?name=Susan+Trumbore&background=0284c7&color=fff&size=200'">
                         <div>
                             <h4 class="text-xl font-bold text-gray-900">Susan Trumbore</h4>
@@ -403,7 +519,7 @@
                     </div>
 
                     <!-- Profile: Daniel Magnabosco Marra -->
-                    <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-6 items-start">
+                    <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-6 items-start">
                         <img src="https://www.bgc-jena.mpg.de/person/dmarra/picture" alt="Daniel Magnabosco Marra" class="w-32 h-32 md:w-32 md:h-32 rounded-xl object-cover shadow-sm flex-shrink-0" onerror="this.src='https://ui-avatars.com/api/?name=Daniel+Marra&background=15803d&color=fff&size=200'">
                         <div>
                             <h4 class="text-xl font-bold text-gray-900">Daniel Magnabosco Marra</h4>
@@ -419,7 +535,7 @@
                     </div>
 
                     <!-- Profile: Robinson Negron -->
-                    <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-6 items-start">
+                    <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-6 items-start">
                         <img src="https://we-are-berkeley-lab.lbl.gov/wp-content/uploads/sites/23/2022/09/Robinson-Negron-Juarez-scaled-e1662483864757.jpg" alt="Robinson Negron" class="w-32 h-32 md:w-32 md:h-32 rounded-xl object-cover shadow-sm flex-shrink-0" onerror="this.src='https://ui-avatars.com/api/?name=Robinson+Negron&background=4f46e5&color=fff&size=200'">
                         <div>
                             <h4 class="text-xl font-bold text-gray-900">Robinson Negrón-Juárez</h4>
@@ -434,54 +550,62 @@
                     </div>
                 </div>
 
-                <!-- Collaborators Section (RESTORED) -->
+                <!-- Collaborators Section -->
                 <div class="text-center max-w-3xl mx-auto mb-12">
                     <h3 class="text-2xl font-serif font-bold text-gray-900 mb-4">Collaborators</h3>
                     <p class="text-gray-600 mb-8">WAOSUE works closely with a network of international scientists and data specialists.</p>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                    <!-- Placeholder Card 1 -->
-                    <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-20 h-20 rounded-full bg-gray-100 mx-auto mb-4 border-2 border-gray-200 flex items-center justify-center text-gray-400">Photo</div>
-                        <h5 class="text-lg font-bold text-gray-900">Luciano Emmert </h5>
-                        <p class="text-sm text-amazon-700 font-medium mb-2">Research Specialization</p>
-                        <p class="text-xs text-gray-500">[Institution Affiliation]</p>
+                    <!-- Collaborator 1 -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://ui-avatars.com/api/?name=Luciano+Emmert&background=f3f4f6&color=374151&size=150" alt="Luciano Emmert" class="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-gray-200 object-cover">
+                        <h5 class="text-lg font-bold text-gray-900">Luciano Emmert</h5>
+                        <p class="text-sm text-amazon-700 font-medium mb-2">Research Collaborator</p>
+                        <p class="text-xs text-gray-500">WAOSUE Network</p>
                     </div>
-                    <!-- Placeholder Card 2 -->
-                    <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-20 h-20 rounded-full bg-gray-100 mx-auto mb-4 border-2 border-gray-200 flex items-center justify-center text-gray-400">Photo</div>
+                    <!-- Collaborator 2 -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://ui-avatars.com/api/?name=Rodil+Tello&background=f3f4f6&color=374151&size=150" alt="Rodil Tello" class="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-gray-200 object-cover">
                         <h5 class="text-lg font-bold text-gray-900">Rodil Tello</h5>
-                        <p class="text-sm text-amazon-700 font-medium mb-2">Research Specialization</p>
-                        <p class="text-xs text-gray-500">[Institution Affiliation]</p>
+                        <p class="text-sm text-amazon-700 font-medium mb-2">Research Collaborator</p>
+                        <p class="text-xs text-gray-500">WAOSUE Network</p>
                     </div>
-                    <!-- Placeholder Card 3 -->
-                    <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-20 h-20 rounded-full bg-gray-100 mx-auto mb-4 border-2 border-gray-200 flex items-center justify-center text-gray-400">Photo</div>
+                    <!-- Collaborator 3 -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://ui-avatars.com/api/?name=Jorge+Solignac&background=f3f4f6&color=374151&size=150" alt="Jorge Solignac" class="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-gray-200 object-cover">
                         <h5 class="text-lg font-bold text-gray-900">Jorge Solignac</h5>
-                        <p class="text-sm text-amazon-700 font-medium mb-2">Research Specialization</p>
-                        <p class="text-xs text-gray-500">[Institution Affiliation]</p>
+                        <p class="text-sm text-amazon-700 font-medium mb-2">Research Collaborator</p>
+                        <p class="text-xs text-gray-500">WAOSUE Network</p>
                     </div>
-                <!-- Placeholder Card 4 -->
-                    <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-20 h-20 rounded-full bg-gray-100 mx-auto mb-4 border-2 border-gray-200 flex items-center justify-center text-gray-400">Photo</div>
+                    <!-- Collaborator 4 -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://ui-avatars.com/api/?name=Waldemar+Alegria&background=f3f4f6&color=374151&size=150" alt="Waldemar Alegria" class="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-gray-200 object-cover">
                         <h5 class="text-lg font-bold text-gray-900">Waldemar Alegria</h5>
-                        <p class="text-sm text-amazon-700 font-medium mb-2">Research Specialization</p>
-                        <p class="text-xs text-gray-500">[Institution Affiliation]</p>
+                        <p class="text-sm text-amazon-700 font-medium mb-2">Research Collaborator</p>
+                        <p class="text-xs text-gray-500">WAOSUE Network</p>
                     </div>
-            <!-- Placeholder Card 5 -->
-                    <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-20 h-20 rounded-full bg-gray-100 mx-auto mb-4 border-2 border-gray-200 flex items-center justify-center text-gray-400">Photo</div>
-                        <h5 class="text-lg font-bold text-gray-900">Adriana Simonetti Lopes Peixoto </h5>
-                        <p class="text-sm text-amazon-700 font-medium mb-2">Research Specialization</p>
-                        <p class="text-xs text-gray-500">[Institution Affiliation]</p>
+                    <!-- Collaborator 5 -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://ui-avatars.com/api/?name=Adriana+Simonetti+Lopes+Peixoto&background=f3f4f6&color=374151&size=150" alt="Adriana Simonetti Lopes Peixoto" class="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-gray-200 object-cover">
+                        <h5 class="text-lg font-bold text-gray-900">Adriana Simonetti Lopes Peixoto</h5>
+                        <p class="text-sm text-amazon-700 font-medium mb-2">Research Collaborator</p>
+                        <p class="text-xs text-gray-500">WAOSUE Network</p>
                     </div>
+                    <!-- Collaborator 6 -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <img src="https://ui-avatars.com/api/?name=Adriana+Simonetti+Lopes+Peixoto&background=f3f4f6&color=374151&size=150" alt="Adriana Simonetti Lopes Peixoto" class="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-gray-200 object-cover">
+                        <h5 class="text-lg font-bold text-gray-900">Santiago Botia</h5>
+                        <p class="text-sm text-amazon-700 font-medium mb-2">Research Collaborator</p>
+                        <p class="text-xs text-gray-500">WAOSUE Network</p>
+                    </div>
+                </div>
 
             </div>
         </section>
     </main>
 
-    <!-- Footer (Ensured there is only one) -->
+    <!-- Footer -->
     <footer class="bg-wood-900 text-white pt-12 pb-8 border-t border-amazon-900" style="background-color: #1a1a1a;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center mb-8">
@@ -500,7 +624,7 @@
         </div>
     </footer>
 
-    <!-- Interactive Scripts for SPA, Scrolling, and APIs (Ensured there is only one script block) -->
+    <!-- Interactive Scripts for SPA, Scrolling, and APIs -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
@@ -538,14 +662,12 @@
                         }, 10);
                     }
                     
-                    // --- THE FIX FOR THE GEE APP ---
-                    // Inject the iframe source ONLY when the tab becomes active, so it calculates dimensions correctly.
+                    // Inject the iframe source ONLY when the tab becomes active
                     if (targetId === 'apps') {
                         const geeFrame = document.getElementById('gee-app-frame');
                         if (geeFrame && !geeFrame.src) {
                             geeFrame.src = 'https://ee-jodaurmu-windv1.projects.earthengine.app/view/windthrow-amazon-observatory';
                             
-                            // Optional: Hide the loading text once the iframe loads
                             geeFrame.onload = function() {
                                 const loadingText = document.getElementById('gee-loading-text');
                                 if(loadingText) loadingText.style.display = 'none';
