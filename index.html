@@ -407,8 +407,22 @@
                     </p>
                 </div>
                 
-                <!-- GEE App Embed -->
-                <div class="w-full bg-gray-100 rounded-xl mb-12 border border-gray-300 shadow-inner relative flex items-center justify-center" style="height: 750px;" id="gee-container">
+                <!-- Shiny App Link Box (MOVED UP) -->
+                <div class="max-w-4xl mx-auto bg-amazon-50 rounded-2xl p-8 border border-amazon-100 flex flex-col md:flex-row items-center justify-between shadow-sm mb-12">
+                    <div class="mb-6 md:mb-0 md:mr-8 text-center md:text-left">
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Advanced Statistical Dashboard</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Dive deeper into temporal disturbance trends, mortality censuses, and statistical modeling using our dedicated Shiny Application.
+                        </p>
+                    </div>
+                    <a href="https://dvdfox.shinyapps.io/wt_app/" target="_blank" class="flex-shrink-0 px-8 py-4 bg-amazon-700 text-white font-medium rounded-lg hover:bg-amazon-900 transition-colors shadow-md inline-flex items-center text-lg">
+                        Launch Shiny App
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </div>
+
+                <!-- GEE App Embed (MOVED DOWN) -->
+                <div class="w-full bg-gray-100 rounded-xl border border-gray-300 shadow-inner relative flex items-center justify-center" style="height: 750px;" id="gee-container">
                     <p id="gee-loading-text" class="text-gray-500 font-medium absolute z-0">Loading Earth Engine App...</p>
                     <iframe 
                         id="gee-app-frame"
@@ -420,20 +434,6 @@
                         class="absolute z-10 bg-white"
                         style="border: none; border-radius: 0.75rem;">
                     </iframe>
-                </div>
-
-                <!-- Shiny App Link Box -->
-                <div class="max-w-4xl mx-auto bg-amazon-50 rounded-2xl p-8 border border-amazon-100 flex flex-col md:flex-row items-center justify-between shadow-sm">
-                    <div class="mb-6 md:mb-0 md:mr-8 text-center md:text-left">
-                        <h4 class="text-xl font-bold text-gray-900 mb-2">Advanced Statistical Dashboard</h4>
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            Dive deeper into temporal disturbance trends, mortality censuses, and statistical modeling using our dedicated Shiny Application.
-                        </p>
-                    </div>
-                    <a href="https://dvdfox.shinyapps.io/wt_app/" target="_blank" class="flex-shrink-0 px-8 py-4 bg-amazon-700 text-white font-medium rounded-lg hover:bg-amazon-900 transition-colors shadow-md inline-flex items-center text-lg">
-                        Launch Shiny App
-                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    </a>
                 </div>
             </div>
         </section>
@@ -735,7 +735,7 @@
 
                     <!-- Profile: Robinson Negron -->
                     <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-6 items-start">
-                        <img src="https://www.ess.uci.edu/sites/ess.uci.edu/files/events/RNJ.jpg" alt="Robinson Negron" class="w-32 h-32 md:w-32 md:h-32 rounded-xl object-cover shadow-sm flex-shrink-0" onerror="this.src='https://ui-avatars.com/api/?name=Robinson+Negron&background=4f46e5&color=fff&size=200'">
+                        <img src="https://we-are-berkeley-lab.lbl.gov/wp-content/uploads/sites/23/2022/09/Robinson-Negron-Juarez-scaled-e1662483864757.jpg" alt="Robinson Negron" class="w-32 h-32 md:w-32 md:h-32 rounded-xl object-cover shadow-sm flex-shrink-0" onerror="this.src='https://ui-avatars.com/api/?name=Robinson+Negron&background=4f46e5&color=fff&size=200'">
                         <div>
                             <h4 class="text-xl font-bold text-gray-900">Robinson Negrón-Juárez</h4>
                             <p class="text-amazon-700 font-medium text-sm mb-3">Co-Founder</p>
