@@ -427,9 +427,20 @@
                         <svg class="w-6 h-6 text-amazon-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                         Interactive Field Plot & Sensor Map
                     </h4>
-                    <div class="w-full bg-gray-100 rounded-xl border border-gray-200 shadow-md p-1" style="height: 500px;">
-                        <!-- UPDATED GOOGLE MY MAPS IFRAME -->
-                        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1e2Qg61Qng7i2Su0AxKR1EEvIs-QbQgM&ehbc=2E312F" width="100%" height="100%" frameborder="0" style="border:0; border-radius: 0.5rem;" allowfullscreen=""></iframe>
+                    
+                    <!-- UPDATED MY MAPS CONTAINER -->
+                    <div class="w-full bg-gray-100 rounded-xl border border-gray-200 shadow-md p-1 relative flex items-center justify-center" style="height: 500px;" id="mymaps-container">
+                        <p id="mymaps-loading-text" class="text-gray-500 font-medium absolute z-0">Loading Map...</p>
+                        <!-- Notice the src is removed and will be injected by JavaScript -->
+                        <iframe 
+                            id="mymaps-frame" 
+                            width="100%" 
+                            height="100%" 
+                            frameborder="0" 
+                            style="border:0; border-radius: 0.5rem;" 
+                            allowfullscreen=""
+                            class="absolute z-10 bg-white">
+                        </iframe>
                     </div>
                     <p class="text-sm text-gray-500 mt-3 text-center">Locations of our field plots, flux towers, and active windthrow disturbance monitoring sites.</p>
                 </div>
@@ -778,6 +789,20 @@
                             
                             geeFrame.onload = function() {
                                 const loadingText = document.getElementById('gee-loading-text');
+                                if(loadingText) loadingText.style.display = 'none';
+                            };
+                        }
+                    }
+                    
+                    // SAME FIX FOR GOOGLE MY MAPS
+                    if (targetId === 'data') {
+                        const myMapsFrame = document.getElementById('mymaps-frame');
+                        if (myMapsFrame && !myMapsFrame.src) {
+                            // Link injected WITHOUT the /u/0/ to prevent permission blocks
+                            myMapsFrame.src = 'https://www.google.com/maps/d/embed?mid=1e2Qg61Qng7i2Su0AxKR1EEvIs-QbQgM&ehbc=2E312F';
+                            
+                            myMapsFrame.onload = function() {
+                                const loadingText = document.getElementById('mymaps-loading-text');
                                 if(loadingText) loadingText.style.display = 'none';
                             };
                         }
