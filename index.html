@@ -84,7 +84,6 @@
             align-items: center;
         }
         .partners-track img {
-            /* INCREASED HEIGHT TO MAKE LOGOS BIGGER */
             height: 90px;
             margin: 0 50px;
             object-fit: contain;
@@ -159,7 +158,7 @@
         <section id="home" class="view-section active hero-pattern relative text-white pt-20 pb-10 lg:pt-32 lg:pb-16 min-h-[calc(100vh-5rem)] flex flex-col justify-center">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
                 
-                <div class="max-w-3xl mb-16">
+                <div class="max-w-3xl mb-12">
                     <span class="inline-block py-1 px-3 rounded-full bg-amazon-500/20 border border-amazon-500/30 text-amazon-100 text-sm font-semibold tracking-wide mb-6 backdrop-blur-sm">
                         Research Initiative
                     </span>
@@ -170,22 +169,7 @@
                         WAOSUE is a collaborative scientific observatory dedicated to investigating large-scale windthrow disturbances, quantifying rapid canopy changes, and assessing their long-term impacts on carbon dynamics across tropical forest ecosystems.
                     </p>
                     
-                    <!-- Featured Research Callout Box -->
-                    <div class="bg-amazon-50 border-l-4 border-amazon-700 p-6 mb-10 rounded-r-lg shadow-lg text-gray-800 max-w-2xl">
-                        <div class="flex items-start gap-4">
-                            <span class="text-2xl mt-1">📢</span>
-                            <div>
-                                <strong class="block text-amazon-900 font-bold mb-1">Featured Research Overview:</strong>
-                                <p class="text-gray-700 mb-3 text-sm md:text-base">Curious about our core mission and the impact of severe weather events? Check out our recent multimedia publication.</p>
-                                <a href="https://lt.org/publication-plus/are-extreme-storms-reshaping-amazon-faster-we-realize/" target="_blank" class="inline-flex items-center text-amazon-700 font-bold hover:text-amazon-800 transition-colors">
-                                    Are extreme storms reshaping the Amazon faster than we realize? 
-                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="flex flex-col sm:flex-row gap-4 mb-16">
                         <button class="nav-btn inline-flex justify-center items-center px-8 py-3.5 border border-transparent text-base font-medium rounded-lg text-amazon-950 bg-white hover:bg-gray-100 shadow-lg transition-colors" data-target="apps">
                             Explore Apps
                         </button>
@@ -195,8 +179,65 @@
                     </div>
                 </div>
 
+                <!-- Mission, Scope, and Objectives Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                    <!-- Mission -->
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl shadow-xl hover:bg-white/15 transition-colors">
+                        <div class="w-12 h-12 bg-amazon-500/80 rounded-xl flex items-center justify-center mb-5 text-white shadow-sm border border-amazon-400/50">
+                            <!-- Flag Icon -->
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 tracking-wide">Our Mission</h3>
+                        <p class="text-gray-200 text-sm leading-relaxed">
+                            To study, quantify, and understand the impacts of large-scale windthrow disturbances and extreme weather events on the structural integrity, carbon dynamics, and long-term ecological resilience of the Amazon rainforest.
+                        </p>
+                    </div>
+
+                    <!-- Scope -->
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl shadow-xl hover:bg-white/15 transition-colors">
+                        <div class="w-12 h-12 bg-amazon-500/80 rounded-xl flex items-center justify-center mb-5 text-white shadow-sm border border-amazon-400/50">
+                            <!-- Globe Icon -->
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 tracking-wide">Research Scope</h3>
+                        <p class="text-gray-200 text-sm leading-relaxed">
+                            Our geographic focus spans from the critical Andean-Amazonian altitudinal gradients down to the central Amazon basin. We seamlessly integrate ground-based biometric censuses, flux tower networks, and high-resolution satellite remote sensing.
+                        </p>
+                    </div>
+
+                    <!-- Objectives -->
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl shadow-xl hover:bg-white/15 transition-colors">
+                        <div class="w-12 h-12 bg-amazon-500/80 rounded-xl flex items-center justify-center mb-5 text-white shadow-sm border border-amazon-400/50">
+                            <!-- Checklist Icon -->
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 tracking-wide">Key Objectives</h3>
+                        <ul class="text-gray-200 text-sm leading-relaxed space-y-2">
+                            <li class="flex items-start"><span class="mr-2 text-amazon-400">•</span> Monitor and map windthrow events using advanced spatial tools.</li>
+                            <li class="flex items-start"><span class="mr-2 text-amazon-400">•</span> Assess the cascading impacts of canopy gaps on forest succession.</li>
+                            <li class="flex items-start"><span class="mr-2 text-amazon-400">•</span> Champion open science by providing transparent, standardized datasets.</li>
+                            <li class="flex items-start"><span class="mr-2 text-amazon-400">•</span> Bridge local observational data with predictive Earth system models.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Featured Research Callout Box -->
+                <div class="bg-amazon-50 border-l-4 border-amazon-700 p-6 mb-16 rounded-r-lg shadow-lg text-gray-800 max-w-3xl">
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl mt-1">📢</span>
+                        <div>
+                            <strong class="block text-amazon-900 font-bold mb-1">Featured Research Overview:</strong>
+                            <p class="text-gray-700 mb-3 text-sm md:text-base">Curious about our core mission and the impact of severe weather events? Check out our recent multimedia publication.</p>
+                            <a href="https://lt.org/publication-plus/are-extreme-storms-reshaping-amazon-faster-we-realize/" target="_blank" class="inline-flex items-center text-amazon-700 font-bold hover:text-amazon-800 transition-colors">
+                                Are extreme storms reshaping the Amazon faster than we realize? 
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Partner Carousel -->
-                <div class="mt-16 pt-10 border-t border-white/20">
+                <div class="pt-8 border-t border-white/20">
                     <p class="text-center text-xs font-semibold tracking-widest text-amazon-100 uppercase mb-6 opacity-80">Our Partners & Institutional Affiliations</p>
                     <div class="partners-carousel">
                         <div class="partners-track">
@@ -590,7 +631,7 @@
                         <p class="text-sm text-amazon-700 font-medium mb-2">Research Collaborator</p>
                         <p class="text-xs text-gray-500">WAOSUE Network</p>
                     </div>
-                    <!-- Collaborator 6 (FIXED AVATAR NAME) -->
+                    <!-- Collaborator 6 -->
                     <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
                         <img src="https://ui-avatars.com/api/?name=Santiago+Botia&background=f3f4f6&color=374151&size=150" alt="Santiago Botia" class="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-gray-200 object-cover">
                         <h5 class="text-lg font-bold text-gray-900">Santiago Botia</h5>
