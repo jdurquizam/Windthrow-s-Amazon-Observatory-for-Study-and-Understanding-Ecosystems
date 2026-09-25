@@ -311,54 +311,71 @@
 
         <!-- View: STATE OF THE ART -->
         <section id="stateoftheart" class="view-section py-20 bg-white min-h-[calc(100vh-5rem)]">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="text-center mb-16">
                     <h2 class="text-sm font-bold text-amazon-700 tracking-widest uppercase mb-3">Scientific Background</h2>
-                    <h3 class="text-3xl font-serif font-bold text-gray-900 mb-4">State of the Art: Windthrows in the Amazon</h3>
-                    <p class="text-gray-600 text-lg leading-relaxed">
-                        A synthesis of current scientific understanding regarding storm-driven forest disturbances, canopy gap dynamics, and their implications for the global carbon cycle.
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6">State of the Art: Windthrows in the Amazon</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">
+                        A comprehensive overview of storm-driven forest disturbances, canopy gap dynamics, and their profound implications for the global carbon cycle.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20 items-start max-w-6xl mx-auto">
-                    <!-- Text blocks -->
-                    <div class="space-y-10 text-gray-700 leading-relaxed">
-                        <div>
-                            <h4 class="text-xl font-bold text-gray-900 border-b-2 border-amazon-500 inline-block mb-3">The Phenomenon</h4>
-                            <p>Windthrows (or blowdowns) are severe disturbance events caused by intense convective storms and squall lines. These localized extreme weather events generate severe downbursts that snap or uproot trees, creating massive canopy gaps ranging from a few trees to thousands of hectares. They are recognized as a primary driver of natural tree mortality across the Amazon basin.</p>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-bold text-gray-900 border-b-2 border-amazon-500 inline-block mb-3">Carbon Cycle & Climate Feedbacks</h4>
-                            <p>Historically, the Amazon acts as a massive carbon sink. However, the sudden and widespread mortality caused by large-scale windthrows instantly transfers massive amounts of live biomass into the dead wood pool (necromass). As this wood decomposes, it releases CO₂, temporarily shifting affected areas from carbon sinks to carbon sources. With climate change potentially altering the frequency and intensity of severe Amazonian storms, understanding these events is critical for global climate modeling.</p>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-bold text-gray-900 border-b-2 border-amazon-500 inline-block mb-3">Forest Succession and Resilience</h4>
-                            <p>Despite their destructive nature, windthrows are essential for maintaining forest diversity. Canopy gaps increase light availability, triggering a vigorous successional response. Pioneer species rapidly colonize the gaps, initiating a recovery process that rebuilds structural complexity over decades. Evaluating the trajectory of this recovery provides vital insights into the long-term resilience of tropical ecosystems.</p>
-                        </div>
+                <!-- Expanded Article Content -->
+                <article class="text-gray-700 space-y-12 mb-20 text-lg leading-relaxed">
+                    
+                    <!-- Quick Facts Sidebar -->
+                    <div class="bg-amazon-50 rounded-2xl p-6 border border-amazon-100 float-none md:float-right md:ml-8 mb-8 w-full md:w-1/3 shadow-sm">
+                        <h4 class="font-bold text-amazon-900 mb-3 text-lg flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            Key Characteristics
+                        </h4>
+                        <ul class="space-y-3 text-sm text-amazon-800">
+                            <li class="flex items-start gap-2"><span class="text-amazon-500 font-bold">Trigger:</span> Severe convective storms & microbursts.</li>
+                            <li class="flex items-start gap-2"><span class="text-amazon-500 font-bold">Impact:</span> Snaps and uproots massive canopy trees instantly.</li>
+                            <li class="flex items-start gap-2"><span class="text-amazon-500 font-bold">Carbon:</span> Shifts local forest patches from net sink to source.</li>
+                            <li class="flex items-start gap-2"><span class="text-amazon-500 font-bold">Detection:</span> Landsat, Sentinel-2, and high-res LiDAR.</li>
+                        </ul>
                     </div>
                     
-                    <!-- Diagram Placeholder -->
-                    <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 shadow-lg sticky top-28">
-                        <img src="https://placehold.co/600x400/15803d/ffffff?text=Windthrow+Dynamics+Diagram" alt="Windthrow Diagram" class="w-full h-auto rounded-lg mb-4 opacity-90 shadow-sm border border-gray-200">
-                        <p class="text-sm text-gray-500 italic text-center">Conceptual diagram of storm-driven tree mortality and subsequent successional recovery dynamics in a tropical forest.</p>
+                    <div>
+                        <h4 class="text-2xl font-bold text-gray-900 border-b-2 border-amazon-500 inline-block mb-4">The Phenomenon & Meteorological Drivers</h4>
+                        <p class="mb-4">Windthrows (commonly referred to as blowdowns) are dramatic, severe disturbance events triggered by intense convective storms and large-scale squall lines. In the Amazon basin, these localized extreme weather systems generate powerful downbursts—sudden, violent downward drafts of air—that impact the forest canopy with devastating force.</p>
+                        <p>Depending on the storm's intensity, these events can snap massive trunks or completely uproot established canopy trees, creating forest gaps that range from a few individual trees to thousands of contiguous hectares. Today, these storm-driven events are recognized as one of the primary drivers of natural tree mortality across the Neotropics.</p>
                     </div>
-                </div>
+
+                    <div>
+                        <h4 class="text-2xl font-bold text-gray-900 border-b-2 border-amazon-500 inline-block mb-4">Carbon Cycle & Climate Feedbacks</h4>
+                        <p class="mb-4">Historically, intact Amazonian forests act as a massive, continuous carbon sink, mitigating global climate change. However, the sudden and widespread tree mortality caused by large-scale windthrows instantly transfers enormous amounts of live biomass into the dead wood pool (necromass).</p>
+                        <p>Over the subsequent years, as this coarse woody debris decomposes, it releases large quantities of CO₂ back into the atmosphere. This process temporarily shifts the affected forest patches from net carbon sinks to carbon sources. With climate change actively altering precipitation patterns and potentially increasing the frequency and intensity of severe storms in the Amazon, accurately quantifying this disturbance-driven carbon flux is critical for global Earth system modeling.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-2xl font-bold text-gray-900 border-b-2 border-amazon-500 inline-block mb-4">Forest Succession and Resilience</h4>
+                        <p class="mb-4">Despite their destructive initial impact, windthrows play an essential role in maintaining the structural complexity and biodiversity of tropical forests. The creation of large canopy gaps drastically increases light availability on the forest floor, triggering a vigorous successional response.</p>
+                        <p>Fast-growing pioneer species rapidly colonize these high-light environments, initiating a dynamic recovery process that can take decades or even centuries to reach maturity. Evaluating the trajectory of this gap-phase regeneration—and comparing it across different soil types, topographies, and microclimates—provides vital insights into the long-term resilience and vulnerability of Amazonian ecosystems.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-2xl font-bold text-gray-900 border-b-2 border-amazon-500 inline-block mb-4">Modern Detection: The Wayra Approach</h4>
+                        <p>Traditionally, mapping these remote disturbances required extensive and difficult field campaigns. Today, observatories like WAOSUE leverage advanced remote sensing technologies—such as optical imagery from Landsat and Sentinel-2, paired with cloud-computing platforms like Google Earth Engine (e.g., our Wayra Tools)—to detect, delineate, and monitor windthrow events continuously. By combining this "eye in the sky" with rigorous ground-truthed field plots and micrometeorological flux towers, researchers can now build a comprehensive, multi-scale understanding of forest dynamics.</p>
+                    </div>
+                </article>
 
                 <!-- References Section -->
-                <div class="max-w-4xl mx-auto bg-gray-50 rounded-2xl p-8 sm:p-10 border border-gray-200 shadow-sm">
+                <div class="max-w-4xl mx-auto bg-gray-50 rounded-2xl p-8 sm:p-10 border border-gray-200 shadow-sm clear-both">
                     <h4 class="text-2xl font-serif font-bold text-gray-900 mb-8 flex items-center gap-3">
                         <svg class="w-6 h-6 text-amazon-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                        Key References & Foundation Literature
+                        Foundation Literature
                     </h4>
                     
                     <div class="space-y-6 text-sm text-gray-700">
                         
                         <!-- Featured Thesis -->
-                        <div class="p-5 bg-white rounded-xl border border-amazon-200 shadow-sm relative overflow-hidden">
+                        <div class="p-5 bg-white rounded-xl border border-amazon-200 shadow-sm relative overflow-hidden mb-8">
                             <div class="absolute left-0 top-0 bottom-0 w-1 bg-amazon-600"></div>
                             <span class="inline-block px-2 py-1 bg-amazon-50 text-amazon-700 text-xs font-bold rounded mb-3 border border-amazon-200">Primary Reference</span>
-                            <p class="mb-3 text-base leading-relaxed">
+                            <p class="mb-3 text-base leading-relaxed text-gray-900">
                                 <strong>Urquiza-Muñoz, J. D.</strong> (2024). <em>Storm-driven windthrow disturbances and their impact on tree mortality in the Central Amazon</em>. PhD Thesis. Max Planck Institute for Biogeochemistry / Friedrich Schiller University Jena.
                             </p>
                             <a href="https://pure.mpg.de/rest/items/item_3680139_3/component/file_3723441/content" target="_blank" class="inline-flex items-center justify-center px-4 py-2 bg-amazon-700 text-white rounded font-medium hover:bg-amazon-900 transition-colors gap-2 text-sm shadow-sm">
@@ -487,7 +504,7 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <h2 class="text-sm font-bold text-amazon-700 tracking-widest uppercase mb-3">Open Science</h2>
-                    <h3 class="text-3xl font-serif font-bold text-gray-900 mb-4">Study sites & datasets</h3>
+                    <h3 class="text-3xl font-serif font-bold text-gray-900 mb-4">Study Sites & Datasets</h3>
                     <p class="text-gray-600">
                         Explore our network of monitoring locations and access our permanently hosted, open-access research data.
                     </p>
@@ -497,7 +514,7 @@
                 <div class="max-w-5xl mx-auto mb-16">
                     <h4 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
                         <svg class="w-6 h-6 text-amazon-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                        Interactive field plot & sensor map
+                        Interactive Field Plot & Sensor Map
                     </h4>
                     
                     <!-- UPDATED MY MAPS CONTAINER -->
@@ -525,12 +542,12 @@
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-bold text-gray-900">Windthrow disturbance dataset</h4>
+                                    <h4 class="text-xl font-bold text-gray-900">Windthrow Disturbance Dataset</h4>
                                     <span class="text-xs font-semibold px-2 py-1 bg-white text-gray-600 rounded mt-1 inline-block border border-gray-200">DOI: 10.5281/zenodo.11168104</span>
                                 </div>
                             </div>
                             <a href="https://zenodo.org/records/11168104" target="_blank" class="px-5 py-2.5 bg-amazon-700 text-white text-sm font-medium rounded-lg hover:bg-amazon-900 transition-colors inline-flex items-center shadow-sm">
-                                Access data on Zenodo
+                                Access Data on Zenodo
                             </a>
                         </div>
                         
@@ -783,28 +800,28 @@
                     </div>
                      <!-- Collaborator 7 -->
                     <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <img src="https://ui-avatars.com/api/?name=Santiago+Botia&background=f3f4f6&color=374151&size=150" alt="Santiago Botia" class="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-gray-200 object-cover">
+                        <img src="https://ui-avatars.com/api/?name=Michael+Vasquez&background=f3f4f6&color=374151&size=150" alt="Michael Vasquez" class="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-gray-200 object-cover">
                         <h5 class="text-lg font-bold text-gray-900">Michael Vasquez</h5>
                         <p class="text-sm text-amazon-700 font-medium mb-2">Research Collaborator</p>
                         <p class="text-xs text-gray-500">WAOSUE Network</p>
                     </div>
                      <!-- Collaborator 8 -->
                     <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <img src="https://ui-avatars.com/api/?name=Santiago+Botia&background=f3f4f6&color=374151&size=150" alt="Santiago Botia" class="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-gray-200 object-cover">
+                        <img src="https://ui-avatars.com/api/?name=Jhostin+Rengifo&background=f3f4f6&color=374151&size=150" alt="Jhostin Rengifo" class="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-gray-200 object-cover">
                         <h5 class="text-lg font-bold text-gray-900">Jhostin Rengifo</h5>
                         <p class="text-sm text-amazon-700 font-medium mb-2">Research Collaborator</p>
                         <p class="text-xs text-gray-500">WAOSUE Network</p>
                     </div>
                      <!-- Collaborator 9 -->
                     <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <img src="https://ui-avatars.com/api/?name=Santiago+Botia&background=f3f4f6&color=374151&size=150" alt="Santiago Botia" class="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-gray-200 object-cover">
+                        <img src="https://ui-avatars.com/api/?name=Roy+Rubio&background=f3f4f6&color=374151&size=150" alt="Roy Rubio" class="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-gray-200 object-cover">
                         <h5 class="text-lg font-bold text-gray-900">Roy Rubio</h5>
                         <p class="text-sm text-amazon-700 font-medium mb-2">Research Collaborator</p>
                         <p class="text-xs text-gray-500">WAOSUE Network</p>
                     </div>
                      <!-- Collaborator 10 -->
                     <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
-                        <img src="https://ui-avatars.com/api/?name=Santiago+Botia&background=f3f4f6&color=374151&size=150" alt="Santiago Botia" class="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-gray-200 object-cover">
+                        <img src="https://ui-avatars.com/api/?name=Segundo+Cordoba&background=f3f4f6&color=374151&size=150" alt="Segundo Cordoba" class="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-gray-200 object-cover">
                         <h5 class="text-lg font-bold text-gray-900">Segundo Cordoba</h5>
                         <p class="text-sm text-amazon-700 font-medium mb-2">Research Collaborator</p>
                         <p class="text-xs text-gray-500">WAOSUE Network</p>
