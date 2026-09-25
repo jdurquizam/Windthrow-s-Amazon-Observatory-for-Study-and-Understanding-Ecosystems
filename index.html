@@ -87,7 +87,7 @@
         .iframe-container iframe {
             position: relative;
             z-index: 1;
-            background: white; /* Hides loading text once loaded */
+            background: white;
         }
     </style>
 </head>
@@ -197,7 +197,7 @@
                     </p>
                 </div>
                 
-                <!-- GEE App Embed (Full Width within max container) -->
+                <!-- GEE App Embed -->
                 <div class="w-full bg-white p-2 rounded-xl mb-12 border border-gray-200 shadow-sm iframe-container">
                     <iframe 
                         src="https://ee-jodaurmu-windv1.projects.earthengine.app/view/windthrow-amazon-observatory" 
@@ -327,23 +327,61 @@
                     <h3 class="text-3xl font-serif font-bold text-gray-900 mb-4">Founders</h3>
                 </div>
 
-                <!-- Founders Grid -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-24">
+                <!-- Founders Grid (Updated to 2x2 for 4 profiles) -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-24 max-w-6xl mx-auto">
+                    
                     <!-- PI Profile: Jose David -->
-                    <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-6 items-start lg:col-span-2 lg:max-w-4xl lg:mx-auto">
-                        <img src="https://placehold.co/200x200/e2e8f0/64748b?text=JD+Urquiza" alt="Jose David Urquiza Muñoz" class="w-32 h-32 md:w-40 md:h-40 rounded-xl object-cover shadow-sm flex-shrink-0">
+                    <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-6 items-start">
+                        <img src="https://placehold.co/200x200/e2e8f0/64748b?text=JD+Urquiza" alt="Jose David Urquiza Muñoz" class="w-32 h-32 md:w-32 md:h-32 rounded-xl object-cover shadow-sm flex-shrink-0">
                         <div>
-                            <h4 class="text-2xl font-bold text-gray-900">Jose David Urquiza Muñoz</h4>
-                            <p class="text-amazon-700 font-medium text-base mb-4">Principal Investigator & Founder</p>
-                            <p class="text-gray-700 text-base mb-5 leading-relaxed">
-                                Faculty member and researcher at Universidad Nacional de la Amazonía Peruana, leading the forest attributes laboratory. Research affiliate with the Max Planck Institute for Biogeochemistry. Co-founder of Forest Data Connect and coordinator of the PanAmazoniaFlux and AndesFlux networks.
+                            <h4 class="text-xl font-bold text-gray-900">Jose David Urquiza Muñoz</h4>
+                            <p class="text-amazon-700 font-medium text-sm mb-3">Principal Investigator & Founder</p>
+                            <p class="text-gray-700 text-sm mb-4 leading-relaxed">
+                                Faculty member and researcher at Universidad Nacional de la Amazonía Peruana, leading the forest attributes laboratory. Research affiliate with the Max Planck Institute for Biogeochemistry.
                             </p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="text-xs font-semibold px-2 py-1 bg-gray-100 text-gray-700 rounded border border-gray-200">Universidad Nacional de la Amazonía Peruana</span>
-                                <span class="text-xs font-semibold px-2 py-1 bg-blue-50 text-blue-700 rounded border border-blue-100">Max Planck Institute for Biogeochemistry</span>
+                                <span class="text-[0.65rem] font-semibold px-2 py-1 bg-gray-100 text-gray-700 rounded border border-gray-200">UNAP</span>
+                                <span class="text-[0.65rem] font-semibold px-2 py-1 bg-blue-50 text-blue-700 rounded border border-blue-100">Max Planck Institute</span>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Profile: Susan Trumbore -->
+                    <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-6 items-start">
+                        <img src="https://placehold.co/200x200/e2e8f0/64748b?text=S+Trumbore" alt="Susan Trumbore" class="w-32 h-32 md:w-32 md:h-32 rounded-xl object-cover shadow-sm flex-shrink-0">
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900">Susan Trumbore</h4>
+                            <p class="text-amazon-700 font-medium text-sm mb-3">Co-Founder</p>
+                            <p class="text-gray-700 text-sm mb-4 leading-relaxed">
+                                Co-founder and leading scientific researcher dedicated to understanding ecosystem dynamics and carbon cycling across the Amazon Basin.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Profile: Daniel Magnabosco Marra -->
+                    <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-6 items-start">
+                        <img src="https://placehold.co/200x200/e2e8f0/64748b?text=D+Marra" alt="Daniel Magnabosco Marra" class="w-32 h-32 md:w-32 md:h-32 rounded-xl object-cover shadow-sm flex-shrink-0">
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900">Daniel Magnabosco Marra</h4>
+                            <p class="text-amazon-700 font-medium text-sm mb-3">Co-Founder</p>
+                            <p class="text-gray-700 text-sm mb-4 leading-relaxed">
+                                Co-founder specializing in tropical forest disturbance, mortality events, and large-scale windthrow recovery processes.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Profile: Robinson Negron -->
+                    <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-6 items-start">
+                        <img src="https://placehold.co/200x200/e2e8f0/64748b?text=R+Negron" alt="Robinson Negron" class="w-32 h-32 md:w-32 md:h-32 rounded-xl object-cover shadow-sm flex-shrink-0">
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900">Robinson Negron</h4>
+                            <p class="text-amazon-700 font-medium text-sm mb-3">Co-Founder</p>
+                            <p class="text-gray-700 text-sm mb-4 leading-relaxed">
+                                Co-founder contributing to spatial analysis and strategic research networks supporting Amazonian ecosystem observations.
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
 
                 <!-- Collaborators Section -->
