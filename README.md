@@ -1,1 +1,1 @@
-# Windthrow-s-Amazon-Observatory-for-Study-and-Understanding-Ecosystems
+# Windthrow's Amazon Observatory for Study and Understanding Ecosystems (WAOSUE)
