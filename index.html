@@ -414,27 +414,14 @@
                 </div>
 
                 <!-- AI Chat Embed Container -->
-                <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 flex items-center justify-center flex-col" style="height: 600px;">
-                    
-                    <!-- PLACEHOLDER UI (Remove this when you get your Chatbase iframe) -->
-                    <div class="text-center p-8">
-                        <div class="w-20 h-20 bg-amazon-100 text-amazon-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
-                        </div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-2">AI Model Initialization</h4>
-                        <p class="text-gray-500 max-w-md mx-auto mb-6">This container is ready to host your custom AI. Once you generate your iframe from a service like Chatbase.co, paste it here.</p>
-                        <a href="https://www.chatbase.co/" target="_blank" class="px-6 py-2.5 bg-amazon-700 text-white font-medium rounded-lg hover:bg-amazon-800 transition-colors text-sm">
-                            Create your bot on Chatbase
-                        </a>
-                    </div>
-                    
-                    <!-- 
-                    HOW TO ADD YOUR AI:
-                    Delete the entire <div class="text-center p-8">...</div> block above.
-                    Paste your Chatbase (or other provider) <iframe> directly here.
-                    Make sure your iframe has: width="100%" height="100%" style="border:none;"
-                    -->
-                    
+                <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200" style="height: 600px;">
+                    <iframe 
+                        src="https://www.chatbase.co/chatbot-iframe/4464wtk8c6pr5x5dOrwdB" 
+                        width="100%" 
+                        height="100%" 
+                        frameborder="0" 
+                        style="border: none;">
+                    </iframe>
                 </div>
             </div>
         </section>
@@ -450,7 +437,7 @@
                     </p>
                 </div>
 
-                <!-- Shiny App Link Box -->
+                <!-- Shiny App Link Box (MOVED UP) -->
                 <div class="max-w-4xl mx-auto bg-amazon-50 rounded-2xl p-8 border border-amazon-100 flex flex-col md:flex-row items-center justify-between shadow-sm mb-12">
                     <div class="mb-6 md:mb-0 md:mr-8 text-center md:text-left">
                         <h4 class="text-xl font-bold text-gray-900 mb-2">Advanced Statistical Dashboard</h4>
@@ -464,7 +451,7 @@
                     </a>
                 </div>
                 
-                <!-- GEE App Embed -->
+                <!-- GEE App Embed (MOVED DOWN) -->
                 <div class="w-full bg-gray-100 rounded-xl mb-12 border border-gray-300 shadow-inner relative flex items-center justify-center" style="height: 750px;" id="gee-container">
                     <p id="gee-loading-text" class="text-gray-500 font-medium absolute z-0">Loading Earth Engine App...</p>
                     <iframe 
