@@ -136,10 +136,10 @@
                 <div class="hidden md:flex items-center space-x-4 lg:space-x-6">
                     <button class="nav-btn text-sm font-medium text-gray-600 hover:text-amazon-700 transition-colors" data-target="home">Home</button>
                     <button class="nav-btn text-sm font-medium text-gray-600 hover:text-amazon-700 transition-colors" data-target="stateoftheart">State of the Art</button>
+                    <button class="nav-btn text-sm font-medium text-gray-600 hover:text-amazon-700 transition-colors" data-target="ai">Windthrow AI</button>
                     <button class="nav-btn text-sm font-medium text-gray-600 hover:text-amazon-700 transition-colors" data-target="apps">Apps</button>
                     <button class="nav-btn text-sm font-medium text-gray-600 hover:text-amazon-700 transition-colors" data-target="fluxtowers">Flux Towers</button>
                     <button class="nav-btn text-sm font-medium text-gray-600 hover:text-amazon-700 transition-colors" data-target="data">Data</button>
-                    <button class="nav-btn text-sm font-medium text-gray-600 hover:text-amazon-700 transition-colors" data-target="ai">Windthrow AI</button>
                     <button class="nav-btn text-sm font-medium text-gray-600 hover:text-amazon-700 transition-colors" data-target="publications">Publications</button>
                     <button class="nav-btn text-sm font-medium text-gray-600 hover:text-amazon-700 transition-colors" data-target="team">Team</button>
                 </div>
@@ -160,10 +160,10 @@
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <button class="nav-btn block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-amazon-700 hover:bg-gray-50" data-target="home">Home</button>
                 <button class="nav-btn block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-amazon-700 hover:bg-gray-50" data-target="stateoftheart">State of the Art</button>
+                <button class="nav-btn block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-amazon-700 hover:bg-gray-50" data-target="ai">Windthrow AI</button>
                 <button class="nav-btn block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-amazon-700 hover:bg-gray-50" data-target="apps">Apps</button>
                 <button class="nav-btn block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-amazon-700 hover:bg-gray-50" data-target="fluxtowers">Flux Towers</button>
                 <button class="nav-btn block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-amazon-700 hover:bg-gray-50" data-target="data">Data</button>
-                <button class="nav-btn block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-amazon-700 hover:bg-gray-50" data-target="ai">Windthrow AI</button>
                 <button class="nav-btn block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-amazon-700 hover:bg-gray-50" data-target="publications">Publications</button>
                 <button class="nav-btn block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-amazon-700 hover:bg-gray-50" data-target="team">Team</button>
             </div>
@@ -402,7 +402,7 @@
             </div>
         </section>
 
-        <!-- View: WINDTHROW AI (NEW) -->
+        <!-- View: WINDTHROW AI -->
         <section id="ai" class="view-section py-20 bg-gray-50 min-h-[calc(100vh-5rem)]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-12">
@@ -414,13 +414,13 @@
                 </div>
 
                 <!-- AI Chat Embed Container -->
-                <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200" style="height: 600px;">
+                <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200" style="height: 650px;">
                     <iframe 
                         src="https://www.chatbase.co/chatbot-iframe/4464wtk8c6pr5x5dOrwdB" 
                         width="100%" 
                         height="100%" 
                         frameborder="0" 
-                        style="border: none;">
+                        style="border: none; min-height: 650px;">
                     </iframe>
                 </div>
             </div>
@@ -437,7 +437,7 @@
                     </p>
                 </div>
 
-                <!-- Shiny App Link Box (MOVED UP) -->
+                <!-- Shiny App Link Box (Top) -->
                 <div class="max-w-4xl mx-auto bg-amazon-50 rounded-2xl p-8 border border-amazon-100 flex flex-col md:flex-row items-center justify-between shadow-sm mb-12">
                     <div class="mb-6 md:mb-0 md:mr-8 text-center md:text-left">
                         <h4 class="text-xl font-bold text-gray-900 mb-2">Advanced Statistical Dashboard</h4>
@@ -451,8 +451,8 @@
                     </a>
                 </div>
                 
-                <!-- GEE App Embed (MOVED DOWN) -->
-                <div class="w-full bg-gray-100 rounded-xl mb-12 border border-gray-300 shadow-inner relative flex items-center justify-center" style="height: 750px;" id="gee-container">
+                <!-- GEE App Embed (Bottom) -->
+                <div class="w-full bg-gray-100 rounded-xl border border-gray-300 shadow-inner relative flex items-center justify-center" style="height: 750px;" id="gee-container">
                     <p id="gee-loading-text" class="text-gray-500 font-medium absolute z-0">Loading Earth Engine App...</p>
                     <iframe 
                         id="gee-app-frame"
@@ -548,7 +548,6 @@
                         Interactive Field Plot & Sensor Map
                     </h4>
                     
-                    <!-- UPDATED MY MAPS CONTAINER -->
                     <div class="w-full bg-gray-100 rounded-xl border border-gray-200 shadow-md p-1 relative flex items-center justify-center" style="height: 500px;" id="mymaps-container">
                         <p id="mymaps-loading-text" class="text-gray-500 font-medium absolute z-0">Loading Map...</p>
                         <iframe 
